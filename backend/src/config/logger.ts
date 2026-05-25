@@ -66,28 +66,6 @@ const createLogger = () => {
           timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
           customFormat
         ),
-      }),
-      new winston.transports.File({
-        filename: path.join(logsDir, 'inventory.log'),
-        format: combine(
-          timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-          customFormat
-        ),
-      }),
-      new winston.transports.File({
-        filename: path.join(logsDir, 'ai.log'),
-        format: combine(
-          timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-          customFormat
-        ),
-      }),
-      new winston.transports.File({
-        filename: path.join(logsDir, 'security.log'),
-        level: 'warn',
-        format: combine(
-          timestamp({ format: 'YYYY-MM-DD HH:mm:ss' }),
-          customFormat
-        ),
       })
     );
   }
